@@ -1,0 +1,34 @@
+Psuedo code 
+
+If time is greater than current time it will be green (future)
+If time is less than current time it will be grey/red (past)
+Whatever the current time is will be green
+
+Display current day on the top of the Calendar
+Display Date w/ Month written
+Display current hour time block (8 hours)
+
+
+Write inside timeblock what your day plan is
+Save written data to local storage when click on save button
+
+timeblock
+    8 hour block of time
+    Dynamic timeblocks, shows current time and 3 hours before and 4 after ( if 8pm, go till 12am, start at 5pm.)
+    enter event inside individual times
+    use javascript to connect timeblock to css 
+    figure out way to target current timeblock ()
+    if currenttime greater than 4 color green
+    if currenttime less then 4 color grey
+    currenttime is red
+    currenttime = 1:00
+    isafter
+    isbefore
+
+Functions
+
+    Click save Function
+
+
+    Write inside current block Function
+
