@@ -74,12 +74,65 @@ function prevHour() {
 
 }
 
+
+function storageFunction () {
+
+    console.log("hi");
+
+    var id = $(this).attr("id");
+    var userInput = $("#" +id).val();
+    console.log(userInput);
+            //   localStorage.setItem(id, userInput);
+    // var userInput = $("#" +id+"-input").val();
+    // localStorage.setItem(id, userInput);
+    // console.log(thisId, id, userInput)
+    
+}
+
+
+
+
+
+
+        
+        
+    // });
+
 function addHour() {
+
+
+    // $("button").on("click", function () {
+    //     console.log("hi");
+
+    //     var id = $(this).attr("id");
+    //     var userInput = $("#" +id).val();
+    //     console.log(userInput);
+    //             //   localStorage.setItem(id, userInput);
+    //     // var userInput = $("#" +id+"-input").val();
+    //     // localStorage.setItem(id, userInput);
+    //     // console.log(thisId, id, userInput)
+
+
+
+
+
+        
+        
+    // });
+
+
+
+
+
     for (var i = 0; i < 4; i++) {
         var buttons = $("<button>");
         var tBlock = $("<div>");
         var text = $("<textarea>");
         text.addClass("tArea");
+        text.attr("id", "txt-"+i);
+        buttons.attr("id", "btn-"+i);
+        tBlock.attr("id", "tBlock-"+i);
+       
 
 
 
@@ -90,6 +143,7 @@ function addHour() {
         tBlock.append(buttons);
         buttons.text("Save");
         buttons.addClass("saveBtn");
+        
         buttons.hover(function () {
             // $( this ).fadeOut( 100 );
             $(this).stop().animate({ 'opacity': '0.2' }, 'slow');
@@ -101,39 +155,22 @@ function addHour() {
         timeBlock.append(timeConvert(currentH + 1));
         currentH++;
 
-        // function storage (e) {
-        //     function writeLocalStorage() {
-        //         if (typeof(Storage) !== "undefined") {
-        //             localStorage.setItem("text", e.value);
-        //         } else {
-        //             document.getElementById("err").innerHTML = "Localstorage not supported";
-        //         }
-        //      }
-           
-        // }
-        
-
-        $(buttons).on("click", function (e) {
-            e.preventDefault();
-            // storage();
-            var thidId = $(this).attr("id");
-            var id = thisId.split("-")[0];
-            var userInput = $("#" +id+)
-
-
-
-
-            var input = document.querySelector(".saveBtn").value;
-            console.log(e.value);
-
-
-            // document.querySelector("")
-
-            var storage = $(text).val();
-            // console.log(this.push);
-           
-            
-        });
+$(buttons).on("click", function () {
+    console.log("hi");
+    var itemId = $(this).attr("id");
+    console.log(itemId);
+    var inputVal = $("#txt-"+itemId.split("-")[1]).val();
+    console.log(inputVal);
+    var key = $("#tBlock-"+itemId.split("-")[1]);
+    localStorage.setItem(itemId, inputVal);
+    // var userInput = $("#" +id).val();
+    // console.log(userInput);
+            //   localStorage.setItem(id, userInput);
+    // // var userInput = $("#" +id+"-input").val();
+    // // localStorage.setItem(id, userInput);
+    // // console.log(thisId, id, userInput)
+    
+});
 
 
 
